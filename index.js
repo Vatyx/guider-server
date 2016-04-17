@@ -49,6 +49,14 @@ app.post("/traffic", function(req,res) {
 	res.end();
 });
 
+app.get("/text", function(req, res) {
+
+});
+
+app.get("/testing", function(req, res) {
+		res.json({hi: "what"})
+});
+
 app.set('port', (process.env.PORT || 3000));
 
 app.listen(app.get('port'), function() {
