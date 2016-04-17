@@ -36,14 +36,30 @@ $('#weather').click(function() {
         });
   }
 })
-
+var counter = 0;
+var interval = null;
+var trafficarray = ["hi", "two", "three", "four"];
 $('#div2').click(function() {
     if(!trafficbool) {
     console.log("Im in here");
     $('#traffic').show();
+    $('#traffic').css("display", "flex");
     $('#traffic').animateCss('fadeInRight');
     trafficbool = true;
 
+    $.get('/traffic', function(data) {
+      trafficarray = data.trafficData;
+
+      $(".news").each(function(index) {
+          $(this).text(trafficarray[counter]);
+          counter = (counter + 1) % trafficarray.length;
+      })
+
+      interval = setInterval(function() { $(".news").each(function(index) {
+          $(this).text(trafficarray[counter]);
+          counter = (counter + 1) % trafficarray.length;
+      })}, 3000);
+    });
   }
 });
 
@@ -55,5 +71,7 @@ $('#traffic').click(function() {
             $('#traffic').removeClass('animated ' + 'fadeOutLeft');
             trafficbool = false;
         });
+        clearInterval(interval);
+        counter = 0;
   }
 })
