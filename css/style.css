@@ -6,12 +6,46 @@ html, body {
 	background-color: #3498db;
 }
 
+section {
+  display: none;
+  position: fixed;
+  color: white;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+}
+
+two {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background: cyan;
+  font-size: 50px;
+display: flex;
+align-items: center;
+user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+justify-content: center;
+
+}
+
 div {
   width: 50%; height: 50%; float: left;
   text-align: center;
   font-size: 50px;
   display: flex;
   align-items: center;
+  user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
   justify-content: center;
   color: white;
 }
@@ -24,4 +58,4 @@ div p {
 #div1 { background: #2979FF; }
 #div2 { background: #F50057; }
 #div3 { background: #00E676; }
-#div4 { background: #FF3D00; }
+#div4 { background: #FFC400; }
