@@ -10,6 +10,10 @@ var location = {lat: 0, long: 0};
 var weather = {temp: "", wind: "", sunset: "", humidity: ""};
 var traffic = {trafficData:[]};
 
+app.get("/", function(req, res) {
+	res.sendfile('index.html');
+});
+
 app.get("/location", function(req, res) {
 	res.json(location);
 });
