@@ -78,6 +78,7 @@ $('#traffic').click(function() {
 })
 
 $('#div3').click(function() {
+  console.log("got in you know?");
   $.get('/answer' function(data) {
     console.log(data);
   });

@@ -58,6 +58,7 @@ app.get("/text", function(req, res) {
 });
 
 app.get("/answer", function(req, res) {
+	console.log("Got into this route");
 	request("http://a15e65ec.ngrok.io/answer", function(error, response, body) {
 		console.log(body);
 		obj = JSON.parse(body);
