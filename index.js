@@ -57,8 +57,12 @@ app.get("/text", function(req, res) {
 	res.end();
 });
 
-app.get("/testing", function(req, res) {
-		res.json({hi: "what"})
+app.get("/answer", function(req, res) {
+	request("http://a15e65ec.ngrok.io/answer", function(error, response, body) {
+		console.log(body);
+		obj = JSON.parse(body);
+		res.json(obj);
+	});
 });
 
 app.set('port', (process.env.PORT || 3000));

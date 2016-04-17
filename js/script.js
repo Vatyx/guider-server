@@ -78,8 +78,9 @@ $('#traffic').click(function() {
 })
 
 $('#div3').click(function() {
-  //$.get('/location' function(data) {
-  //});
+  $.get('/answer' function(data) {
+    console.log(data);
+  });
 
 });
 
