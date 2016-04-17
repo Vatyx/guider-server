@@ -37,6 +37,11 @@ justify-content: center;
 
 }
 
+three {
+  width: 90%;
+  height: 90%;
+}
+
 #temp {
   font-size: 40px;
 }
