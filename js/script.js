@@ -18,10 +18,10 @@ $('#div1').click(function() {
     weatherbool = true;
 
     $.get('/weather', function(data) {
-        $('#temp').text(data.weatherData.temp);
-        $('#hum').text(data.weatherData.humidity);
-        $('#wind').text(data.weatherData.wind);
-        $('#sunset').text(data.weatherData.sunset);
+        $('#temp').text(data.temp);
+        $('#hum').text(data.humidity);
+        $('#wind').text(data.wind);
+        $('#sunset').text(data.sunset);
     });
   }
 });
