@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname));
 
 var location = {lat: 0, long: 0};
-var weather = {};
+var weather = {weatherData:{}};
 var traffic = {trafficData:[]};
 
 app.get("/location", function(req, res) {
@@ -27,7 +27,7 @@ app.get("/weather", function(req, res) {
 });
 
 app.post("/weather", function(req,res) {
-	weather = req.body;
+	weather.weatherData = req.body.weatherData;
 	res.end();
 });
 
