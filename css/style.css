@@ -1,5 +1,5 @@
 html, body {
-	font-family: 'Open Sans';
+	font-family: 'Lato';
 	height: 100%;
 	margin: 0;
 	position: relative;
@@ -10,10 +10,18 @@ div {
   width: 50%; height: 50%; float: left;
   text-align: center;
   font-size: 50px;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-#div1 { background: #DDD; }
-#div2 { background: #AAA; }
-#div3 { background: #777; }
-#div4 { background: #444; }
+div p {
+  margin: 0;
+  color: white;
+}
+
+#div1 { background: #2979FF; }
+#div2 { background: #F50057; }
+#div3 { background: #00E676; }
+#div4 { background: #FF3D00; }
