@@ -79,7 +79,7 @@ $('#traffic').click(function() {
 $('#div3').click(function() {
   //$.get('/location' function(data) {
   //});
-  $.get('http://localhost:3000', function(data) {
+  $.get('https://localhost:3000', function(data) {
     console.log("Got something!");
     console.log(data);
 });
