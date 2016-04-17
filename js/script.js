@@ -1,6 +1,7 @@
 console.log("I loaded");
 var weatherbool = false;
 var trafficbool = false;
+var answerbool = false;
 
 $.fn.extend({
     animateCss: function (animationName) {
@@ -78,15 +79,61 @@ $('#traffic').click(function() {
 })
 
 $('#div3').click(function() {
-  console.log("got in you know?");
+    if(!answerbool) {
+    $('#answer').show();
+    $('#answer').css("display", "flex");
+    $('#answer').animateCss('fadeInRight');
+    setTimeout(function () {
+      $('.bogo').text("Waiting on your answer");
+    }, 5000);
+
   $.get('/answer', function(data) {
     console.log(data);
+    $('.bogo').text("Your answer is: " + data.answer);
+    answerbool = true;
   });
-
+}
 });
 
+$('#answer').click(function() {
+  if(answerbool) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $('#answer').addClass('animated ' + 'fadeOutLeft').one(animationEnd, function() {
+            $('#answer').hide();
+            $('#answer').removeClass('animated ' + 'fadeOutLeft');
+            $('.bogo').text("Speak your question into the mic!");
+            answerbool = false;
+        });
+  }
+})
+
+
+var textbool = true;
 $('#div4').click(function() {
+  var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
   $.get('/text', function(data) {
-    console.log("Sent the text");
+        if(textbool) {
+          textbool = false;
+        $('park').addClass('animated ' + 'flipOutX').one(animationEnd, function() {
+            $('park').hide()
+            $('park').text("Text sent!");
+            $('park').removeClass('animated ' + 'flipOutX');
+            $('park').show();
+            $('park').addClass('animated ' + 'flipInX').one(animationEnd, function() {
+              setTimeout(function() {
+                $('park').removeClass('animated ' + 'flipInX');
+                $('park').addClass('animated ' + 'flipOutX').one(animationEnd, function() {
+                    $('park').hide()
+                    $('park').text("Park!");
+                    $('park').removeClass('animated ' + 'flipOutX');
+                    $('park').show();
+                    $('park').addClass('animated ' + 'flipInX').one(animationEnd, function() {
+                      textbool = true;
+                    });
+                });
+              }, 2000);
+            });
+        });
+      }
   });
 });

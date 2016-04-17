@@ -59,7 +59,7 @@ app.get("/text", function(req, res) {
 
 app.get("/answer", function(req, res) {
 	console.log("Got into this route");
-	request("http://a15e65ec.ngrok.io/start_record", function(error, response, body) {
+	request("http://67de6c21.ngrok.io/start_record", function(error, response, body) {
 		console.log(body);
 		obj = JSON.parse(body);
 		res.json(obj);
