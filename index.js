@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var request = require('request');
 var app = express();
 
 app.use(bodyParser.json());
@@ -50,7 +51,10 @@ app.post("/traffic", function(req,res) {
 });
 
 app.get("/text", function(req, res) {
+	request('https://api.tropo.com/1.0/sessions?action=create&token=4f734e706f77724b664c474f7241614a476c507764744d4f765a70426a446670435a61767049476e6856614c&lat='+ location.lat + '&long=' + location.long, function (error, response, body) {
 
+  });
+	res.end();
 });
 
 app.get("/testing", function(req, res) {

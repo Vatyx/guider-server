@@ -80,23 +80,11 @@ $('#traffic').click(function() {
 $('#div3').click(function() {
   //$.get('/location' function(data) {
   //});
-  console.log("I'm in here");
-  $.get('localhost:5000/testing', function(data) {
-    console.log("Got something!");
-    console.log(data);
-});
 
 });
 
 $('#div4').click(function() {
-  //$.get('/location' function(data) {
-      data = {};
-      var lat = data.lat;
-      var long = data.long;
-      lat = 10;
-      long = 10;
-      $.get('http://whateverorigin.org/get?url=' + encodeURIComponent('https://api.tropo.com/1.0/sessions?action=create&token=4f734e706f77724b664c474f7241614a476c507764744d4f765a70426a446670435a61767049476e6856614c&lat='+ lat + '&long='+ long) + '&callback=?', function(data){
-      	alert("Yay!");
-      });
-  //});
+  $.get('/text', function(data) {
+    console.log("Sent the text");
+  });
 });
