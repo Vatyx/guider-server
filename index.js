@@ -26,6 +26,7 @@ app.post("/location", function(req, res) {
 	res.end();
 });
 
+
 app.get("/weather", function(req, res) {
 	res.json(weather);
 });
