@@ -89,7 +89,7 @@ $('#div3').click(function() {
 
   $.get('/answer', function(data) {
     console.log(data);
-    $('.bogo').text("Your answer is: " + data.answer);
+    $('.bogo').text(data.answer);
     answerbool = true;
   });
 }
