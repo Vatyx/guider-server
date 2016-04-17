@@ -1,3 +1,4 @@
+console.log("I loaded");
 var weatherbool = false;
 var trafficbool = false;
 
@@ -79,7 +80,7 @@ $('#traffic').click(function() {
 $('#div3').click(function() {
   //$.get('/location' function(data) {
   //});
-  alert("I'm in here");
+  console.log("I'm in here");
   $.get('localhost:3000/testing', function(data) {
     console.log("Got something!");
     console.log(data);
