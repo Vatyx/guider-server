@@ -1,48 +1,5 @@
 var weatherbool = false;
-
-var what = {
-  "weatherData": {
-    "name": "San Francisco",
-    "id": "5391959",
-    "weather": [
-      {
-        "icon": "01n",
-        "id": "800",
-        "main": "Clear",
-        "description": "clear sky"
-      }
-    ],
-    "base": "cmc stations",
-    "wind": {
-      "speed": "1.5",
-      "deg": "110"
-    },
-    "clouds": {
-      "all": "1"
-    },
-    "dt": "1460886744",
-    "cod": "200",
-    "coord": {
-      "lon": "-122.42",
-      "lat": "37.77"
-    },
-    "main": {
-      "humidity": "43",
-      "temp": "284.69",
-      "temp_max": "289.15",
-      "temp_min": "281.15",
-      "pressure": "1027"
-    },
-    "sys": {
-      "sunset": "1460947691",
-      "sunrise": "1460899823",
-      "id": "226",
-      "message": "0.0042",
-      "country": "US",
-      "type": "1"
-    }
-  }
-};
+var trafficbool = false;
 
 $.fn.extend({
     animateCss: function (animationName) {
@@ -61,11 +18,10 @@ $('#div1').click(function() {
     weatherbool = true;
 
     $.get('/weather', function(data) {
-      console.log(what.weatherData);
-        $('#temp').text(what.weatherData.main.temp + " F");
-        $('#hum').text(what.weatherData.main.humidity);
-        $('#wind').text(what.weatherData.wind.speed);
-        $('#sunset').text(what.weatherData.sys.sunset);
+        $('#temp').text(data.weatherData.temp);
+        $('#hum').text(data.weatherData.humidity);
+        $('#wind').text(data.weatherData.wind);
+        $('#sunset').text(data.weatherData.sunset);
     });
   }
 });
@@ -77,6 +33,27 @@ $('#weather').click(function() {
             $('#weather').hide();
             $('#weather').removeClass('animated ' + 'fadeOutLeft');
             weatherbool = false;
+        });
+  }
+})
+
+$('#div2').click(function() {
+    if(!trafficbool) {
+    console.log("Im in here");
+    $('#traffic').show();
+    $('#traffic').animateCss('fadeInRight');
+    trafficbool = true;
+
+  }
+});
+
+$('#traffic').click(function() {
+  if(trafficbool) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $('#traffic').addClass('animated ' + 'fadeOutLeft').one(animationEnd, function() {
+            $('#traffic').hide();
+            $('#traffic').removeClass('animated ' + 'fadeOutLeft');
+            trafficbool = false;
         });
   }
 })

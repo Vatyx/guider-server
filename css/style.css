@@ -40,6 +40,43 @@ justify-content: center;
 three {
   width: 90%;
   height: 90%;
+  margin: 0 auto;
+  float: left;
+  color: black;
+  background: cyan;
+  font-size: 50px;
+display: flex;
+flex-direction: column;
+text-align: center;
+align-items: center;
+user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+justify-content: center;
+overflow: auto;
+
+display:inline-block;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translateY(-50%) translateX(-50%);
+}
+
+#ohyeah {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  float: left;
+  background: green;
+}
+
+threeoverflow {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding-right: 10px;
 }
 
 #temp {
