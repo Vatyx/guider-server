@@ -81,10 +81,9 @@ $('#div3').click(function() {
   //$.get('/location' function(data) {
   //});
   console.log("I'm in here");
-  $.get('localhost:3000/testing', function(data) {
+  $.get('localhost:5000/testing', function(data) {
     console.log("Got something!");
     console.log(data);
-    alert(data);
 });
 
 });
