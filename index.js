@@ -10,7 +10,7 @@ var location = {lat: 0, long: 0};
 var speed  
 
 app.get("/", function(req, res) {
-	res.json(location);
+	res.sendfile('index.html');
 });
 
 app.post("/", function(req, res) {

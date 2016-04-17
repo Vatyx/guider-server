@@ -1,0 +1,19 @@
+html, body {
+	font-family: 'Open Sans';
+	height: 100%;
+	margin: 0;
+	position: relative;
+	background-color: #3498db;
+}
+
+div {
+  width: 50%; height: 50%; float: left;
+  text-align: center;
+  font-size: 50px;
+  vertical-align: middle;
+}
+
+#div1 { background: #DDD; }
+#div2 { background: #AAA; }
+#div3 { background: #777; }
+#div4 { background: #444; }
