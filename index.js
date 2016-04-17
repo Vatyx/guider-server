@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname));
 
 var location = {lat: 0, long: 0};
-var weather = {weatherData:{}};
+var weather = {temp: "", wind: "", sunset: "", humidity: ""};
 var traffic = {trafficData:[]};
 
 app.get("/location", function(req, res) {
@@ -25,9 +25,13 @@ app.post("/location", function(req, res) {
 app.get("/weather", function(req, res) {
 	res.json(weather);
 });
-
+//wind humidity sunset temp
 app.post("/weather", function(req,res) {
-	weather.weatherData = req.body.weatherData;
+	console.log(req.body);
+	weather.temp = req.body.temp;
+	weather.sunset = req.body.sunset;
+	weather.humidity = req.body.humidity;
+	weather.wind = req.body.wind;
 	res.end();
 });
 
